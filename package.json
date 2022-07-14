@@ -1,0 +1,36 @@
+{
+  "name": "@qdk/type",
+  "version": "1.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "qianduanka",
+  "license": "ISC",
+  "keywords": [
+    "@Type",
+    "Type",
+    "arguments",
+    "array",
+    "boolean",
+    "check",
+    "date",
+    "function",
+    "is",
+    "is-type",
+    "is-type-of",
+    "kind",
+    "kind-of",
+    "number",
+    "object",
+    "of",
+    "regexp",
+    "string",
+    "test",
+    "type",
+    "type-of",
+    "typeof",
+    "types"
+  ],
+  "description": ""
+}
