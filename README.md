@@ -54,6 +54,15 @@ Type.isBigInt(1n); // true
 Type.isSymbol(Symbol('qdk')); // true
 
 Type.isArray([]); // true
+Type.isRegExp(/qdk/g); // true
+Type.isDate(new Date()); // true
+Type.isMap(new Map()); // true
+Type.isSet(new Set()); // true
+Type.isWeakMap(new WeakMap()); // true
+Type.isWeakSet(new WeakSet()); // true
+Type.isPromise(new Promise()); // true
+Type.isArrayBuffer(new ArrayBuffer(16)); // true
+Type.isDataView(new DataView(new ArrayBuffer(16))); // true
 ```
 
 ## 例三、类的名称
