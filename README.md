@@ -51,7 +51,7 @@ Type.isString("qdk"); // true
 Type.isString(new String("qdk")); // true
 Type.isBoolean(false); // true
 Type.isBigInt(1n); // true
-Type.isSymbol(Symbol('qdk')); // true
+Type.isSymbol(Symbol("qdk")); // true
 
 Type.isArray([]); // true
 Type.isRegExp(/qdk/g); // true
@@ -106,3 +106,11 @@ Type.instanceof(animal, Object); // true
 Type.objClassName(animal); // Animal
 Type.objClass(animal); // f Animal()
 ```
+
+
+## 网站
+[前端咖](https://www.qianduanka.com)
+
+## 联系
+微信号：qdk_qdk
+球球号：3313362924
