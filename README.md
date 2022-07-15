@@ -30,7 +30,7 @@ Type([]); // array
 Type({}); // object
 ```
 
-## 例二、判断是否为基本类型
+## 例二、判断类型
 
 ```javascript
 const Type = require("@qdk/type");
@@ -40,6 +40,20 @@ Type.isPrimitive("qdk"); // true
 Type.isPrimitive(true); // true
 Type.isPrimitive([]); // false
 Type.isPrimitive({}); // false
+
+Type.isUndefined(undefined); // true
+Type.isNull(null); // true
+Type.isNumber(1); // true
+Type.isNumber(new Number(1)); // true
+Type.isNumber(Infinity); // true
+Type.isNumber(NaN); // true
+Type.isString("qdk"); // true
+Type.isString(new String("qdk")); // true
+Type.isBoolean(false); // true
+Type.isBigInt(1n); // true
+Type.isSymbol(Symbol('qdk')); // true
+
+Type.isArray([]); // true
 ```
 
 ## 例三、类的名称
