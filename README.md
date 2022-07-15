@@ -44,11 +44,15 @@ Type.isPrimitive({}); // false
 Type.isUndefined(undefined); // true
 Type.isNull(null); // true
 Type.isNumber(1); // true
-Type.isNumber(new Number(1)); // true
+let num = new Number(1);
+Type.isNumber(num); // true
+Type.isNumber(num) && Type.isPrimitive(num); // false
 Type.isNumber(Infinity); // true
 Type.isNumber(NaN); // true
 Type.isString("qdk"); // true
-Type.isString(new String("qdk")); // true
+let str = new String("qdk");
+Type.isString(str); // true
+Type.isNumber(str) && Type.isPrimitive(str); // false
 Type.isBoolean(false); // true
 Type.isBigInt(1n); // true
 Type.isSymbol(Symbol("qdk")); // true
