@@ -10,6 +10,8 @@ const TypeEnum = [
 
 const TypeObjEnum = [
   "Object",
+  "Function",
+  "GeneratorFunction",
   "RegExp",
   "Date",
   "Error",
@@ -38,14 +40,24 @@ function Type(val) {
   if (val === undefined) {
     return "undefined";
   }
-  if (
-    typeof val === "object" &&
-    val.hasOwnProperty("length") &&
-    val.hasOwnProperty("callee") &&
-    typeInner(val) === "arguments"
-  ) {
-    return true;
+  if (typeof val === "object") {
+    if (
+      val.hasOwnProperty("length") &&
+      val.hasOwnProperty("callee") &&
+      typeInner(val) === "arguments"
+    ) {
+      return "arguments";
+    }
+    
+    if (
+      val.hasOwnProperty("next") &&
+      val.hasOwnProperty("return") &&
+      typeInner(val) === "generator"
+    ) {
+      return "generator";
+    }
   }
+
   return val.constructor.name.toLowerCase();
 }
 
