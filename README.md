@@ -30,6 +30,10 @@ Type([]); // array
 Type({}); // object
 ```
 
+## 提示
+
+is + [Number|String|Boolean|Object|Array|Date|Promise...] 与 instance 效果等价。
+
 ## 例二、判断类型
 
 ```javascript
@@ -52,7 +56,7 @@ Type.isNumber(NaN); // true
 Type.isString("qdk"); // true
 let str = new String("qdk");
 Type.isString(str); // true
-Type.isNumber(str) && Type.isPrimitive(str); // false
+Type.isString(str) && Type.isPrimitive(str); // false
 Type.isBoolean(false); // true
 Type.isBigInt(1n); // true
 Type.isSymbol(Symbol("qdk")); // true
@@ -64,24 +68,12 @@ Type.isMap(new Map()); // true
 Type.isSet(new Set()); // true
 Type.isWeakMap(new WeakMap()); // true
 Type.isWeakSet(new WeakSet()); // true
-Type.isPromise(new Promise()); // true
+Type.isPromise(new Promise(res=>res)); // true
 Type.isArrayBuffer(new ArrayBuffer(16)); // true
 Type.isDataView(new DataView(new ArrayBuffer(16))); // true
 ```
 
-## 例三、类的名称
-
-```javascript
-const Type = require("@qdk/type");
-
-Type.objClassName(1); // Number
-Type.objClassName("qdk"); // String
-Type.objClassName(true); // Boolean
-Type.objClassName([]); // Array
-Type.objClassName({}); // Object
-```
-
-## 例四、类的对象实例
+## 例三、类的对象实例
 
 ```javascript
 const Type = require("@qdk/type");
@@ -91,6 +83,20 @@ Type.instance("qdk", String); // true
 Type.instance(true, Boolean); // true
 Type.instance([], Array); // true
 Type.instance({}, Object); // true
+Type.instance(new WeakMap(), WeakMap); // true
+Type.instance(new Promise(res=>res), Promise); // true
+```
+
+## 例四、类的名称
+
+```javascript
+const Type = require("@qdk/type");
+
+Type.objClassName(1); // Number
+Type.objClassName("qdk"); // String
+Type.objClassName(true); // Boolean
+Type.objClassName([]); // Array
+Type.objClassName({}); // Object
 ```
 
 ## 例五、综合
@@ -111,10 +117,11 @@ Type.objClassName(animal); // Animal
 Type.objClass(animal); // f Animal()
 ```
 
-
 ## 网站
+
 [前端咖](https://www.qianduanka.com)
 
 ## 联系
+
 微信号：qdk_qdk
 球球号：3313362924
